@@ -1,0 +1,42 @@
+.content {
+
+  height:  100vh;
+  width: 100%;
+
+}
+
+
+.content > .tags {
+  display: flex;
+  margin-top: 90px;
+  justify-content: space-around;
+}
+
+
+.nav {
+  margin-top: 90px;
+}
+
+
+.displayMeals {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin-left: 10%;
+  padding: 25px;
+  width: 80%;
+  padding-top: 80px;
+}
+
+/* button element */
+.button {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+
+}
+
+.button > button {
+  border-radius: 5px;
+  background-color: #fff;
+}

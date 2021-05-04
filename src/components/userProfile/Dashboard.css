@@ -1,0 +1,29 @@
+.dashboard {
+  margin-top: 100px;
+ text-align: center;
+}
+
+
+
+.savedMealsCard {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin-left: 10%;
+  padding: 25px;
+  width: 80%;
+  padding-top: 80px;
+
+}
+
+@media (max-width: 480px) {
+
+  .savedMealsCard {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+

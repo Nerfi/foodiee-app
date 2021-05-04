@@ -1,0 +1,51 @@
+.maingDivHome {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  background-image: url("../../images/foodBackground.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+
+}
+
+/* centering in the middle of the background image the text and the button */
+.maingDivHome .info__home  {
+  max-width: 900px;
+  text-align: center;
+
+}
+
+.maingDivHome .info__home h2 {
+  font-size: 5em;
+  color: #fcf8ec;
+}
+
+
+ .info__home .btn {
+  font-size: 1em;
+  color: #fff;
+  background:#ff0157;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 20px;
+  margin-top:20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+}
+
+.info__home .btn:hover {
+  letter-spacing: 6px;
+  color: black;
+}
+
+.menu__title span {
+  color: #ff0157;
+  align-content: center;
+  text-align: center;
+
+}

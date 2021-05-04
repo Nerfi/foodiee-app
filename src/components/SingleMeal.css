@@ -1,0 +1,109 @@
+.background {
+  height: 100vh;
+   position: relative;
+   width: 100%;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 100px;
+}
+
+.descriptionRecipe {
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  margin: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Domine', serif;
+}
+
+
+
+/* ICon*/
+.extraClass{
+     font-size:55px;
+     opacity: 0.6;
+     transition: opacity 500ms ease;
+}
+
+.extraClass:hover {
+  opacity: 1;
+}
+
+.mealTitle {
+  font-family: 'Jomhuria', cursive;
+  font-size:85px;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  margin: 50px;
+  max-width: 900px;
+}
+
+.originalUrl {
+  margin:20px;
+}
+
+
+.displayStepsAndIngredients {
+  display: flex;
+
+}
+
+
+.ingredientsMeal {
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.mealSteps {
+  width: 50%;
+ text-align: center;
+  margin-bottom: 18rem;
+}
+
+.mealSteps > ol > li {
+ padding:20px;
+}
+
+
+.unitsAndAmount {
+  display: flex;
+ justify-content: center;
+
+}
+
+.unitsAndAmount > p {
+  padding: 5px;
+}
+
+@media (max-width: 480px) {
+
+  .savedBtn {
+    position: relative;
+    top: 105px;
+    height: 50px;
+    right: 50px;
+  }
+  .mealTitle {
+    font-size: 45px;
+    justify-content: center;
+    position: relative;
+    left: 35px;
+  }
+
+
+.extraClass{
+     font-size:65px;
+     opacity: 0.8;
+     transition: opacity 500ms ease;
+     position: relative;
+     top: -300px;
+ }
+
+ }
+

@@ -1,0 +1,11 @@
+.cardComponent {
+  align-items: center;
+
+}
+
+@media (max-width: 600px) {
+  .signupContainer {
+    justify-content: center;
+    display: grid;
+  }
+}

@@ -1,0 +1,23 @@
+
+/* media querys */
+@media (max-width:600px) {
+  .cardComponent {
+  margin:20px;
+  display: flex;
+  flex-direction: row;
+  width: 30vh;
+}
+
+}
+
+
+/*@media (max-width: 480px) {
+  .cardComponent {
+    width: 15vh;
+
+    display: flex;
+    background-color: red;
+
+  }
+}
+ */

@@ -1,0 +1,30 @@
+import React from 'react';
+import './AboutUs.css';
+
+function AboutUs() {
+  return(
+    <div className="mainAbout">
+
+      <div className="leftSide">
+      <h2 className="title"> <span>A</span>bout us</h2>
+        <p>
+        Lorem Ipsum es simplemente el texto de relleno
+        de las imprentas y archivos de texto. Lorem Ipsum ha sido
+        el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor
+        (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+        </p>
+      </div>
+      <div className="rightSide">
+      <img
+      className="imgRight"
+      src="https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fGZvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      alt="about"
+      />
+      </div>
+
+    </div>
+  );
+};
+
+
+export default AboutUs;
