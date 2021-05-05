@@ -47,7 +47,7 @@ if (loading) return  <Spinner/>
 
 
 return (
-    <div className='content'>
+    <div className='content' >
       <div>{error && <p>something went wrong...</p>}</div>
 
       <TagsSelection select={select} tags={tags}/>
