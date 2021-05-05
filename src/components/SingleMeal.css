@@ -85,25 +85,31 @@
 
   .savedBtn {
     position: relative;
-    top: 105px;
+    top: 10px;
     height: 50px;
     right: 50px;
+
   }
   .mealTitle {
-    font-size: 45px;
-    justify-content: center;
-    position: relative;
-    left: 35px;
+    font-size: 40px;
+
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin: -35px 0 0 -35px;
+
   }
 
 
 .extraClass{
-     font-size:65px;
+     font-size:25px;
      opacity: 0.8;
      transition: opacity 500ms ease;
      position: relative;
      top: -300px;
- }
+  }
 
  }
 
