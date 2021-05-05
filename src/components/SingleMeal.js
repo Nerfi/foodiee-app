@@ -17,6 +17,7 @@ function SingleMeal(props) {
   const {user}  = useContext(UserContext);
   const [cliked, setCliked] = useState(false);
   const [clickIngredients, setClickIngredients] = useState(false);
+  const [savedMealError, setSavedMealError] = useState(null);
 
 
   const history= useHistory();
@@ -149,7 +150,7 @@ if (!user) {
 
 
     } catch(e) {
-      setError(e.message)
+      setSavedMealError(e.message)
     }
 return user
 
@@ -165,8 +166,8 @@ return user
          {title}
         </div>
 
-        <div className="savedBtn"  onClick={addToDb} >
-          <i className=" extraClass fa fa-bookmark"  style={{ width: '120px', marginTop: '37rem'}}></i>
+        <div className="savedBtn"  onClick={addToDb}>
+          <i className=" extraClass fa fa-bookmark"   style={{ width: '120px', marginTop: '37rem'}}></i>
         </div>
 
 
