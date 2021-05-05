@@ -15,6 +15,9 @@ function SingleMeal(props) {
   const [s,setS] = useState({})
   const [loading, setLoading] = useState(false);
   const {user}  = useContext(UserContext);
+  const [cliked, setCliked] = useState(false);
+  const [clickIngredients, setClickIngredients] = useState(false);
+
 
   const history= useHistory();
 
@@ -61,7 +64,7 @@ if(loading)return <Spinner/>
 
   //extracting data from API steps response
   const stepsAndMeasures = object => {
-      return object?.map(step => (
+      return object?.slice(0,2).map(step => (
         <div key={step.name}>
          <p>{step.name.toUpperCase()}</p>
          <div className="unitsAndAmount">
@@ -72,6 +75,20 @@ if(loading)return <Spinner/>
      ));
   }
 
+  /* function in order to listen when the user click and then displayig more or less content*/
+  const stepsAndMeasuresFull = object => {
+    return object?.map(step => (
+        <div key={step.name}>
+         <p>{step.name.toUpperCase()}</p>
+         <div className="unitsAndAmount">
+          <p className='amount'>{step.measures.us.amount}</p>
+          <p>{step.measures.us.unitShort}</p>
+         </div>
+        </div>
+     ));
+
+  }
+
 
 ///replacing html tags
 const replaceBtag = string => string.replace(/<.*?>/g, '')
@@ -79,12 +96,24 @@ const replaceBtag = string => string.replace(/<.*?>/g, '')
 const displaySteps = array => {
   return array && (
     <ol>
-      {array[0]?.steps?.map((step, index) => <li key={index}> {step.step}</li>)}
+      {array[0]?.steps?.slice(0,2).map((step, index) => <li key={index}> {step.step}</li>)}
     </ol>
     )
   };
-//function in order to display the tags of each meal
-const tagsOfMeal = array => array?.map(tag => <div className="meal__tag">{tag}</div>);
+
+//crear otro function para desplegar todos los pasos en caso
+//de que el user asi lo desee
+
+const fullSteps = array => {
+  return array && (
+    <ol>
+      {array[0]?.steps?.map((step, index) => <li key={index}> {step.step}</li>)}
+    </ol>
+    );
+
+};
+
+
 
 
 //adding to firebase
@@ -126,7 +155,6 @@ return user
 
 }
 
-
   return (
     <div className="container">
     {error && error}
@@ -155,13 +183,16 @@ return user
     <div className="displayStepsAndIngredients">
       <div className="ingredientsMeal">
        <h2>Ingrediensts</h2>
-       {stepsAndMeasures(extendedIngredients)}
+       {clickIngredients ? stepsAndMeasuresFull(extendedIngredients) : stepsAndMeasures(extendedIngredients) }
+       <p onClick={() => setClickIngredients(!clickIngredients)}>{clickIngredients ? 'Read Less' : 'Read More'}</p>
 
       </div>
 
       <div className="mealSteps">
       <h2>Method</h2>
-       {analyzedInstructions && displaySteps(analyzedInstructions)}
+       {cliked ? fullSteps(analyzedInstructions) : displaySteps(analyzedInstructions)}
+       <p onClick={() => setCliked(!cliked)}>{cliked ? 'Read Less' : ' Read More'}</p>
+
       </div>
   </div>
 
