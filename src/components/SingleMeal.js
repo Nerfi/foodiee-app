@@ -115,8 +115,6 @@ const fullSteps = array => {
 };
 
 
-
-
 //adding to firebase
 const addToDb = async (e) => {
 
