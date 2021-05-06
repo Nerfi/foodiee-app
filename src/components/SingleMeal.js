@@ -44,7 +44,7 @@ function SingleMeal(props) {
 
   },[params.id]);
 
-  console.log(response,  'response from SingleMeal')
+
 
 if(loading)return <Spinner/>
 

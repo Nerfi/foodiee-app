@@ -11,43 +11,18 @@ import {MealIdContext} from '../Context/MealIdComponent';
 
 const Dashboard = () => {
 
-  const [savedd, setSaved] = useState([]);
-  const [error, setError] = useState(null);
+
   const [loading,setLoading] = useState(false);
-  const {uid, email, displayName, photoURL} = useContext(UserContext);
+  const { email, displayName, photoURL} = useContext(UserContext);
   const {user} = useContext(UserContext);
 
   //meal id context
-  const {saved} = useContext(MealIdContext);
-
-  console.log(saved.map(e => e.id), 'values from meal id component context')
-
+  const {saved, ids, error} = useContext(MealIdContext);
   //using history object
   const history = useHistory();
-
-  useEffect(() => {
-
-    const meals = async () => {
-
-      let retrieveMeals = [];
-      setLoading(true)
-
-      let snapshot = await firebase.firestore()
-          .collection('users')
-          .doc(user.uid)
-          .collection('saved')
-          .get()
-          setLoading(false);
-
-      snapshot.forEach(doc => doc.exists ? retrieveMeals.push(doc.data()) : null )
-      setSaved(retrieveMeals);
-
-   };
-
-    meals();
+//  console.log(ids, 'from dasboidr context meal/dasbord component ') // working
 
 
-  },[])
   if (loading) return <Spinner/>
 
   return(
@@ -77,8 +52,7 @@ const Dashboard = () => {
       </div>
 
         <div className="savedMealsCard">
-        { saved.map(meal => <FoodCard {...meal} key={meal.id} />)}
-        {console.log(saved.map(e => e.id), 'saved meals id ')}
+        { saved?.map(meal => <FoodCard {...meal} key={meal.id} />)}
 
         </div>
 

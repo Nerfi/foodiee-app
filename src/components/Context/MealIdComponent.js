@@ -10,26 +10,34 @@ const MealIdComponent = (props) => {
 
   const [ids, setIds] = useState([]);
   const [saved, setSaved] = useState([]);
-  const {user, uid} = useContext(UserContext)
+  const {user} = useContext(UserContext)
+  const {uid} = useContext(UserContext);
+  const [error, setError] = useState(null);
+
 
 
     useEffect(() => {
 
       const meals = async () => {
 
-
       let retrieveMeals = [];
       //setLoading(true)
+      try {
 
       let snapshot = await firebase.firestore()
           .collection('users')
-          .doc(user.uid)
+          .doc(user?.uid)
           .collection('saved')
           .get()
          // setLoading(false);
+        snapshot.forEach(doc => doc.exists ? retrieveMeals.push(doc.data()) : null )
+      } catch(e) {
+        setError(e.message)
+      }
 
-      snapshot.forEach(doc => doc.exists ? retrieveMeals.push(doc.data()) : null )
+
       setSaved(retrieveMeals);
+      setIds(saved.map(id => id.id))
 
       };
 
@@ -38,7 +46,10 @@ const MealIdComponent = (props) => {
 
     },[]);
 
-    const values = {saved}
+    console.log(ids , 'ids from meal component context')
+
+
+    const values = {saved, ids, error}
 
   return(
     <MealIdContext.Provider value={values}>
