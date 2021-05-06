@@ -14,6 +14,7 @@ import UpdateUserData from './components/UI/UpdateUserData';
 import ForgotPassword from './components/userProfile/ForgotPassword';
 //protected routes
 import ProtectedRoutes from './Auth/ProtectedRoutes';
+import {MealIdComponent} from './components/Context/MealIdComponent';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 
       <Router>
       <UserAuth>
+       <MealIdComponent>
          <NavbarFood/>
          <Switch>
 
@@ -35,6 +37,8 @@ function App() {
          <ProtectedRoutes path={"/update-user-data"} component={UpdateUserData} />
          <Route exact  path="/" component={Home} />
          </Switch>
+          </MealIdComponent>
+
          </UserAuth>
       </Router>
 

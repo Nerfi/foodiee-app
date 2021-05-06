@@ -5,16 +5,23 @@ import { UserContext} from '../../AuthContext/AuthContext';
 import FoodCard from '../UI/FoodCard';
 import {useHistory} from 'react-router-dom';
 import Spinner from '../UI/Spinner';
+import {MealIdContext} from '../Context/MealIdComponent';
 
 
 
 const Dashboard = () => {
 
-  const [saved, setSaved] = useState([]);
+  const [savedd, setSaved] = useState([]);
   const [error, setError] = useState(null);
   const [loading,setLoading] = useState(false);
   const {uid, email, displayName, photoURL} = useContext(UserContext);
   const {user} = useContext(UserContext);
+
+  //meal id context
+  const {saved} = useContext(MealIdContext);
+
+  console.log(saved.map(e => e.id), 'values from meal id component context')
+
   //using history object
   const history = useHistory();
 
@@ -31,7 +38,6 @@ const Dashboard = () => {
           .collection('saved')
           .get()
           setLoading(false);
-
 
       snapshot.forEach(doc => doc.exists ? retrieveMeals.push(doc.data()) : null )
       setSaved(retrieveMeals);
@@ -72,6 +78,7 @@ const Dashboard = () => {
 
         <div className="savedMealsCard">
         { saved.map(meal => <FoodCard {...meal} key={meal.id} />)}
+        {console.log(saved.map(e => e.id), 'saved meals id ')}
 
         </div>
 

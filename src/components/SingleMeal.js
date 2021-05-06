@@ -44,6 +44,8 @@ function SingleMeal(props) {
 
   },[params.id]);
 
+  console.log(response,  'response from SingleMeal')
+
 if(loading)return <Spinner/>
 
   //deconstructing the object response
@@ -117,12 +119,17 @@ const fullSteps = array => {
 
 //adding to firebase
 const addToDb = async (e) => {
+  //check if the user does not have the same meal twice
 
   e.preventDefault();
 
 if (!user) {
   history.push("/login");
 }
+
+if(response.id === 716426) return;
+
+
 
     try {
     await firebase.firestore()
@@ -144,7 +151,7 @@ if (!user) {
     extendedIngredients,
     id
     })
-    .then(res =>  setS(res))
+    .then(res =>  console.log(res.id, 'res from SingleMeal'))
 
 
     } catch(e) {
