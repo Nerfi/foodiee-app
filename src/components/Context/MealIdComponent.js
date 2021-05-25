@@ -53,7 +53,6 @@ const MealIdComponent = (props) => {
 
 
     const values = {saved, ids, error, loading};
-    console.log('asfdasdf')
 
   return(
     <MealIdContext.Provider value={values}>

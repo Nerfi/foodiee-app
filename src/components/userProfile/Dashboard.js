@@ -18,9 +18,7 @@ const Dashboard = () => {
   const {saved, ids, error, loading} = useContext(MealIdContext);
   //using history object
   const history = useHistory();
-//  console.log(ids, 'from dasboidr context meal/dasbord component ') // working
 
-console.log(saved, 'saved')
 
   if (loading) return <Spinner/>
 

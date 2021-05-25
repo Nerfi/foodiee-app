@@ -32,6 +32,10 @@ function SingleMeal(props) {
   const API_SECRET = process.env.REACT_APP_FOOD_KEY;
 
 
+  //storing the ids  in an array of just ids
+  const ids = saved.map(item => item.id);
+
+
   useEffect(() => {
 
       const fetchSingleMeal = async () => {
@@ -123,16 +127,12 @@ const fullSteps = array => {
 
 };
 
-//workig this code down below
-//if(response.id === 661653) return alert('already there dude ');
-
 
 
 //adding to firebase
 const addToDb = async (e) => {
-  //check if the user does not have the same meal twice
 
-  e.preventDefault();
+ e.preventDefault();
 //redirecting the user in case there is no one logged in
 if (!user) {
   history.push("/login");
@@ -159,7 +159,7 @@ if (!user) {
     extendedIngredients,
     id
     })
-    .then(res =>  console.log(res.id, 'res from SingleMeal'))
+    .then(res =>  setS(res))
 
 
     } catch(e) {
@@ -180,7 +180,12 @@ return user
         </div>
 
         <div className="savedBtn"  onClick={addToDb}>
-          <i className=" extraClass fa fa-bookmark"   style={{ width: '120px', marginTop: '37rem'}}></i>
+        {
+
+
+          ids.includes(response.id) ? '' : <i className=" extraClass fa fa-bookmark"   style={{ width: '120px', marginTop: '37rem'}}></i>
+
+        }
         </div>
 
 
