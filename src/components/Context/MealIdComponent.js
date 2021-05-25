@@ -13,6 +13,7 @@ const MealIdComponent = (props) => {
   const {user} = useContext(UserContext)
   const {uid} = useContext(UserContext);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
 
 
@@ -23,6 +24,7 @@ const MealIdComponent = (props) => {
       let retrieveMeals = [];
       //setLoading(true)
       try {
+        setLoading(true)
 
       let snapshot = await firebase.firestore()
           .collection('users')
@@ -35,6 +37,9 @@ const MealIdComponent = (props) => {
         setError(e.message)
       }
 
+      setLoading(false);
+
+
 
       setSaved(retrieveMeals);
       setIds(saved.map(id => id.id))
@@ -44,12 +49,11 @@ const MealIdComponent = (props) => {
       //calling the function
       meals();
 
-    },[]);
-
-    console.log(ids , 'ids from meal component context')
+    },[user]); //maybe this is not really correct, have a look after
 
 
-    const values = {saved, ids, error}
+    const values = {saved, ids, error, loading};
+    console.log('asfdasdf')
 
   return(
     <MealIdContext.Provider value={values}>

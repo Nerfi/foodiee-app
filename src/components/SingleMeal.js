@@ -5,6 +5,7 @@ import {apiHelper} from '../API/api';
 import {firebase} from '../firebase/firebase';
 import { UserContext} from '../AuthContext/AuthContext';
 import Spinner from './UI/Spinner';
+import {MealIdContext} from './Context/MealIdComponent';
 
 
 function SingleMeal(props) {
@@ -14,7 +15,11 @@ function SingleMeal(props) {
   const [error, setError] = useState(null);
   const [s,setS] = useState({})
   const [loading, setLoading] = useState(false);
+    //contexts
   const {user}  = useContext(UserContext);
+  const {saved} = useContext(MealIdContext);
+
+
   const [cliked, setCliked] = useState(false);
   const [clickIngredients, setClickIngredients] = useState(false);
   const [savedMealError, setSavedMealError] = useState(null);
@@ -64,6 +69,8 @@ if(loading)return <Spinner/>
     extendedIngredients,
     id
   } = response;
+
+
 
   //extracting data from API steps response
   const stepsAndMeasures = object => {
@@ -116,19 +123,20 @@ const fullSteps = array => {
 
 };
 
+//workig this code down below
+//if(response.id === 661653) return alert('already there dude ');
+
+
 
 //adding to firebase
 const addToDb = async (e) => {
   //check if the user does not have the same meal twice
 
   e.preventDefault();
-
+//redirecting the user in case there is no one logged in
 if (!user) {
   history.push("/login");
 }
-
-if(response.id === 716426) return;
-
 
 
     try {

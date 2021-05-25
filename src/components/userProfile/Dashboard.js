@@ -11,17 +11,16 @@ import {MealIdContext} from '../Context/MealIdComponent';
 
 const Dashboard = () => {
 
-
-  const [loading,setLoading] = useState(false);
   const { email, displayName, photoURL} = useContext(UserContext);
   const {user} = useContext(UserContext);
 
   //meal id context
-  const {saved, ids, error} = useContext(MealIdContext);
+  const {saved, ids, error, loading} = useContext(MealIdContext);
   //using history object
   const history = useHistory();
 //  console.log(ids, 'from dasboidr context meal/dasbord component ') // working
 
+console.log(saved, 'saved')
 
   if (loading) return <Spinner/>
 
