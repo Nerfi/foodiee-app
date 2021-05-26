@@ -49,7 +49,7 @@ const MealIdComponent = (props) => {
       //calling the function
       meals();
 
-    },[user]); //maybe this is not really correct, have a look after
+    },[user]);
 
 
     const values = {saved, ids, error, loading};
