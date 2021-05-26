@@ -1,4 +1,4 @@
-import  React,{useState, useEffect} from 'react';
+import  React,{useState} from 'react';
 import './RandomMeal.css';
 import FoodCard from './UI/FoodCard';
 import TagsSelection from './UI/TagsSelection';

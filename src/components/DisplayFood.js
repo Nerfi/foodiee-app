@@ -27,6 +27,8 @@ function DisplayFoods() {
     getFood();
 
   },[]);
+
+  if (error) return <h1>There was an error {error}</h1>
   if (loading) return <Spinner/>
 
 

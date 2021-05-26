@@ -8,8 +8,7 @@ function FoodCard(props) {
   const {
     image,
     title,
-    id,
-    summary
+    id
   } = props;
 
   return(

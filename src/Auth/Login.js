@@ -1,5 +1,4 @@
 import React,{useState, useContext} from 'react';
-import { firebase} from '../firebase/firebase';
 import './Login.css';
 import {useHistory, Link} from 'react-router-dom';
 import { UserContext} from '../AuthContext/AuthContext';
@@ -10,7 +9,7 @@ function Login () {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {login, user} = useContext(UserContext);
+  const {login} = useContext(UserContext);
   const [error, setError] = useState("")
   const history = useHistory()
 

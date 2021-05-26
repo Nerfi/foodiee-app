@@ -1,7 +1,6 @@
 import React, {useState, useContext} from 'react';
 import './UpdateUserData.css';
 import { UserContext} from '../../AuthContext/AuthContext';
-import  {storage, firebase} from '../../firebase/firebase';
 import {useHistory, Link} from 'react-router-dom';
 import { Form, Button, Card, Alert } from "react-bootstrap"
 

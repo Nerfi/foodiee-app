@@ -1,5 +1,5 @@
 import React, {useState,useEffect, useContext} from 'react';
-import {useRouteMatch, Redirect, useHistory} from 'react-router-dom';
+import {useRouteMatch, useHistory} from 'react-router-dom';
 import './SingleMeal.css';
 import {apiHelper} from '../API/api';
 import {firebase} from '../firebase/firebase';
@@ -171,7 +171,8 @@ return user
 
   return (
     <div className="container">
-    {error && error}
+    {error  && error}
+    {savedMealError && savedMealError}
       <div className="background" style={{backgroundImage: `url(${image})`, borderStyle: 'solid'}}>
        <div className="saveIcon">
        </div>

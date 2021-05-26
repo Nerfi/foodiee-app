@@ -1,6 +1,6 @@
-import React,{useState, useEffect, useContext} from  'react';
+import React,{ useContext} from  'react';
 import './Dashboard.css';
-import {firebase} from '../../firebase/firebase';
+
 import { UserContext} from '../../AuthContext/AuthContext';
 import FoodCard from '../UI/FoodCard';
 import {useHistory} from 'react-router-dom';
@@ -11,11 +11,10 @@ import {MealIdContext} from '../Context/MealIdComponent';
 
 const Dashboard = () => {
 
-  const { email, displayName, photoURL} = useContext(UserContext);
   const {user} = useContext(UserContext);
 
   //meal id context
-  const {saved, ids, error, loading} = useContext(MealIdContext);
+  const {saved, error, loading} = useContext(MealIdContext);
   //using history object
   const history = useHistory();
 

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
   const [error, setError] = useState("")
   const [message, setMessage] = useState("")
   const [email, setNewEmail] = useState('');
-  const {resetPassword, user} = useContext(UserContext);
+  const {resetPassword} = useContext(UserContext);
 
 
 

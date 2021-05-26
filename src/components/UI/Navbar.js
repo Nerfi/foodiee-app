@@ -1,7 +1,6 @@
 import React,{useState,useContext} from  'react';
 import { UserContext} from '../../AuthContext/AuthContext';
-import {Navbar, Nav} from 'react-bootstrap';
-import {firebase} from '../../firebase/firebase';
+import {Navbar} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
 
 
@@ -25,6 +24,7 @@ function NavbarFood() {
 
   return(
    <Navbar className="navbar" fixed="top" bg="light">
+     {error && error}
     <Navbar.Brand href="/"><span style={{color: '#ff0157'}}>F</span>oodied </Navbar.Brand>
     <Navbar.Toggle />
     <Navbar.Collapse className="justify-content-end">
