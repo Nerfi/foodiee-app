@@ -12,7 +12,6 @@ import {MealIdContext} from '../Context/MealIdComponent';
 const Dashboard = () => {
 
   const {user} = useContext(UserContext);
-
   //meal id context
   const {saved, error, loading} = useContext(MealIdContext);
   //using history object
