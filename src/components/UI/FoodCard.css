@@ -11,13 +11,14 @@
 }
 
 
-@media (max-width: 480px) {
-  .cardComponent {
-    display: flex;
-    background-color: red;
-    color: red;
+
+
+@media  (max-width:480px) {
+   .cardComponent {
+    display: grid;
+    grid-template-columns: 1fr;
+
+
 
   }
 }
-
-
