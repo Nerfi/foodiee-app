@@ -4,6 +4,7 @@ import FoodCard from './UI/FoodCard';
 import TagsSelection from './UI/TagsSelection';
 import {apiHelper} from '../API/api';
 import Spinner from './UI/Spinner';
+import Button from 'react-bootstrap/Button';
 
 
 function RandomMeal() {
@@ -53,7 +54,9 @@ return (
       <TagsSelection select={select} tags={tags}/>
 
      <div className="button">
-      <button onClick={fetchRandom}>Search for random recipies</button>
+      <Button variant="primary" size="lg" active onClick={fetchRandom}>
+       Search
+     </Button>
      </div>
 
      <div className="displayMeals">

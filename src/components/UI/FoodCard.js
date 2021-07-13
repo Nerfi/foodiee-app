@@ -13,7 +13,8 @@ function FoodCard(props) {
 
   return(
     <Card className="cardComponent">
-      <Card.Img variant="top" src={image } />
+
+      <Card.Img variant="top" src={image} />
       <Card.Body>
 
       <Link to={`meal/${id}`}>

@@ -11,13 +11,13 @@
 }
 
 
-/*@media (max-width: 480px) {
+@media (max-width: 480px) {
   .cardComponent {
-    width: 15vh;
-
     display: flex;
     background-color: red;
+    color: red;
 
   }
 }
- */
+
+
